@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
         this.allWidgets = widgets;
       }
     )
-    console.log(this.allWidgets);
   }
 
   addTo(cardName: any, columnName: any) {
