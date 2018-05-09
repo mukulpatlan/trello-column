@@ -1,0 +1,11 @@
+.navbar{
+    background: #00548a;
+    color: #fff;
+}
+.navbar-brand{
+    color: #fff;
+    font-style: italic;
+}
+.navbar-logo{
+    max-width: 80px;
+}

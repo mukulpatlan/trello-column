@@ -1,0 +1,24 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img class="navbar-logo" src="../assets/trello-logo.png" alt="Trello Logo">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" #f="ngForm">
+        <div class="form-group">
+          <label for="cardName">Card Name</label>
+          <input type="text" class="form-control" name="cardName" ngModel required #cardName placeholder="Card Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail2">Column Name</label>
+          <select class="form-control" [(ngModel)]="selectedColumnName" name="columnName" #columnName>
+            <option *ngFor="let container of containers" [value]="container.name">{{container.name}}</option>
+          </select>
+        </div>
+        <button (click)="addTo(cardName, columnName)" type="submit" [disabled]="!f.valid" class="btn btn-success">+</button>
+      </form>
+    </div>
+  </div>
+</nav>

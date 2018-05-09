@@ -1,0 +1,20 @@
+<div class="container" id="columns">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let container of allWidgets | group">
+      <div class="panel bg-panel" dnd-sortable-container [sortableData]="container.widgets" [dropZones]="['widget-dropZone', 'delete-dropZone']">
+        <div class="panel-heading">
+          {{container.name}}
+        </div>
+        <div class="panel-body bg-light">
+          <ul class="list-group">
+            <li *ngFor="let widget of container.widgets; let x = index" class="list-group-item" dnd-draggable  dnd-sortable [sortableIndex]="x" [dragEnabled]="true"
+              [dragData]="widget">
+              {{widget.name}}
+              <span class="pull-right" (click)="removCard(widget)"><i class="glyphicon glyphicon-remove"></i></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
